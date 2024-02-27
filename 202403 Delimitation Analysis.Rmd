@@ -9,6 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(googlesheets4)
+library(AER)
 ```
 
 # Importing data
