@@ -1,0 +1,21 @@
+---
+title: "20240224 Extract Population Data"
+author: "Surbhi Bharadwaj"
+date: "2024-02-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, eval = FALSE}
+#install.packages("tcltk2")
+#install.packages("PDE", dependencies = TRUE)
+library(tcltk2)
+library(PDE)
+PDE_install_Xpdftools4.02()    # Download and install the Xpdf command line tools
+PDE_check_Xpdf_install()        # Check if all required XPDF tools are installed correctly
+PDE_analyzer_i()
+```
+
