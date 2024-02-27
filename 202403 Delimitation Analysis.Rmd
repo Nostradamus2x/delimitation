@@ -1,0 +1,30 @@
+---
+title: "Delimitation Analysis"
+author: "Surbhi Bharadwaj"
+date: "2024-02-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(googlesheets4)
+```
+
+# Importing data
+## Google sheets
+```{r}
+url <- "https://docs.google.com/spreadsheets/d/1KPrjK-y6f3arAhAvWZ6g5Uz6PglPIozd5dn4BqTBfnY/edit#gid=1979699733"
+population_projection <- read_sheet(url, sheet = "population_projection")
+population_history <- read_sheet(url, sheet = "population_history")
+fiscal_shares <- read_sheet(url, sheet = "fiscal_shares")
+rs_seats <- read_sheet(url, sheet = "seats") 
+```
+
+## Other local sources
+```{r}
+#assembly <- read_csv("Data/TCPD_AE_All_States_2023-7-25.csv")
+general <- read_csv("Data/TCPD_GE_All_States_2023-11-6.csv")
+ls_seats <- general %>% filter(Year == "2019" & Position == 1) %>% group_by(State_Name) %>% summarise(n = n())
+```
+
